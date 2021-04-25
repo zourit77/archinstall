@@ -16,5 +16,4 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
 echo "zone geographique parametrée"
 
-break
 sh ./user.sh
