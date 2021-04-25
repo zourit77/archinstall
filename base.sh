@@ -13,5 +13,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 echo "on chroot le systeme"
 arch-chroot /mnt
 
+break
+echo "continuez..."
 echo "parametrage de la langue..."
 sh ./lang.sh
