@@ -9,18 +9,17 @@ echo "========================"
 echo "montage des partitions :"
 echo "========================"
 
-echo "boot : (/mnt/boot)"
-read arch-boot
+read -p "boot : (/mnt/boot)" arch-boot
 
-echo "home : (/mnt/home)"
-read arch-home
+echo 
+read -p "home : (/mnt/home)" arch-home
 
-echo "root : (/mnt)" 
-read ach-root
+echo 
+read -p "root : (/mnt)" ach-root
 
 fdisk -l
-echo "type de disque : (sda, vda...)"
-read disque
+
+read -p "type de disque : (sda, vda...)" disque
 
 mkfs.vfat -F32 /dev/$disque1
 mkfs.ext4 /dev/$disque3
