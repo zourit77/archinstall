@@ -9,13 +9,6 @@ echo "========================"
 echo "montage des partitions :"
 echo "========================"
 
-read -p "boot : (/mnt/boot)" arch-boot
-
-echo 
-read -p "home : (/mnt/home)" arch-home
-
-echo 
-read -p "root : (/mnt)" ach-root
 
 fdisk -l
 
@@ -30,16 +23,16 @@ mkswap /dev/$disque2
 swapon /dev/$disque2
 echo "montage du swap teminé"
 
-mount /dev/$disque3 $arch-root
+mount /dev/$disque3 /mnt
 mkdir /mnt/{boot,home}
-mount /dev/$disque1 $arch-boot
+mount /dev/$disque1 /mnt/boot
 mount /dev/$disque3 /mnt/home
 echo "montage du systeme de fichiers terminé"
 
 #choix suivant installation du systeme
 
 PS3='> '   # le prompt
-LISTE=("[o] oui" "[n]  non")  # liste de choix disponibles
+LISTE=("[o] installer la base systeme ?" "[n]  arrêter ici")  # liste de choix disponibles
 select CHOIX in "${LISTE[@]}" ; do
     case $REPLY in
         1|o)
