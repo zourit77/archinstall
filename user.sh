@@ -13,6 +13,6 @@ passwd $user
 echo "très bien ..."
 sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
-break
+
 sh ./logiciels.sh
 
