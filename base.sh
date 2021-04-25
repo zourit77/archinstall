@@ -13,7 +13,10 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 echo "on chroot le systeme"
 arch-chroot /mnt
 
+git clone https://gitbub.com/zourit77/achinstall
+
 break
 echo "continuez..."
 echo "parametrage de la langue..."
+cd archinstall/
 sh ./lang.sh
