@@ -12,21 +12,21 @@ echo "========================"
 
 fdisk -l
 
-read -p "type de disque : (sda, vda...)" disque
+read -p "type de disque : (sda, vda...)" d
 
-mkfs.vfat -F32 /dev/$disque1
-mkfs.ext4 /dev/$disque3
+mkfs.vfat -F32 /dev/$d1
+mkfs.ext4 /dev/$3
 echo "formatage terminé"
 
 
-mkswap /dev/$disque2
-swapon /dev/$disque2
+mkswap /dev/$d2
+swapon /dev/$d2
 echo "montage du swap teminé"
 
-mount /dev/$disque3 /mnt
+mount /dev/$d3 /mnt
 mkdir /mnt/{boot,home}
-mount /dev/$disque1 /mnt/boot
-mount /dev/$disque3 /mnt/home
+mount /dev/$d1 /mnt/boot
+mount /dev/$d3 /mnt/home
 echo "montage du systeme de fichiers terminé"
 
 #choix suivant installation du systeme
