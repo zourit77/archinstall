@@ -2,6 +2,9 @@
 
 cfdisk
 
+echo "appuyez sur une touche pour contnuer"
+break
+
 echo "========================"
 echo "montage des partitions :"
 echo "========================"
