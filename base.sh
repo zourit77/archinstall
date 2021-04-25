@@ -10,13 +10,12 @@ pacstrap /mnt base base-devel pacman-contrib intel-ucode nano zip unzip p7zip na
 echo "ecriture des partitions dans le fstab"
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
+mkdir /mnt/tmp/archinstall
+git clone https://gitbub.com/zourit77/archinstall /mnt/tmp/archinstall/
 echo "on chroot le systeme"
 arch-chroot /mnt
 
-git clone https://gitbub.com/zourit77/achinstall
-
-break
 echo "continuez..."
 echo "parametrage de la langue..."
-cd archinstall/
+cd /tmp/archinstall/
 sh ./lang.sh
